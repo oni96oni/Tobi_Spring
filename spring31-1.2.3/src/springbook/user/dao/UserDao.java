@@ -44,7 +44,8 @@ public abstract class UserDao {
 
 		return user;
 	}
-
+	
+	// 추상메서드로 만들어 버리고 구현은 상속받는 클래스들이 하도록! 그리하면 소스코드 공개없이 서비스제공 가능
 	abstract protected Connection getConnection() throws ClassNotFoundException, SQLException ;
 
 
@@ -53,18 +54,18 @@ public abstract class UserDao {
 
 		User user = new User();
 		user.setId("whiteship");
-		user.setName("��⼱");
+		user.setName("백기선");
 		user.setPassword("married");
 
 		dao.add(user);
 			
-		System.out.println(user.getId() + " ��� ����");
+		System.out.println(user.getId() + " 조회 완료");
 		
 		User user2 = dao.get(user.getId());
 		System.out.println(user2.getName());
 		System.out.println(user2.getPassword());
 			
-		System.out.println(user2.getId() + " ��ȸ ����");
+		System.out.println(user2.getId() + " 수정 완료");
 	}
 
 }

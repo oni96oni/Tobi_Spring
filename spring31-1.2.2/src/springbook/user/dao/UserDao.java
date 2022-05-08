@@ -45,7 +45,7 @@ public class UserDao {
 		return user;
 	}
 
-
+//  ê³µí†µëœ ë¶€ë¶„ì„ ë¶„ë¦¬ - ë©”ì†Œë“œ ì¶”ì¶œ
 	private Connection getConnection() throws ClassNotFoundException,
 			SQLException {
 		Class.forName("com.mysql.jdbc.Driver");
@@ -59,18 +59,18 @@ public class UserDao {
 
 		User user = new User();
 		user.setId("whiteship");
-		user.setName("¹é±â¼±");
+		user.setName("ë°±ê¸°ì„ ");
 		user.setPassword("married");
 
 		dao.add(user);
 			
-		System.out.println(user.getId() + " µî·Ï ¼º°ø");
+		System.out.println(user.getId() + " ë“±ë¡ ì„±ê³µ");
 		
 		User user2 = dao.get(user.getId());
 		System.out.println(user2.getName());
 		System.out.println(user2.getPassword());
 			
-		System.out.println(user2.getId() + " Á¶È¸ ¼º°ø");
+		System.out.println(user2.getId() + " ì¡°íšŒ ì„±ê³µ");
 	}
 
 }
